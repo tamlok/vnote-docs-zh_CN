@@ -3,19 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to VNote's Documentation
+欢迎使用VNote文档
 ================================
 
 .. image:: https://github.com/tamlok/vnote/raw/master/screenshots/vnote.png
 
-Designed specially for Markdown, `VNote`_ is a Vim-inspired note-taking application, which knows programmers and Markdown better.
+`VNote`_ 是一个受Vim启发的更懂程序员和Markdown的一个笔记软件。
 
-VNote is open source, and available on `Github`_.
+VNote在 `Github`_ 上开源。
 
 .. _VNote: https://tamlok.github.io/vnote/
 .. _Github: https://github.com/tamlok/vnote/
 
-The main documentation for the site is organized into a couple of sections:
+原文档通过英文提供，中文翻译由用户 `Ben2001github`_ 提供！
+
+.. _Ben2001github: https://github.com/Ben2001github/
+
+文档主要按如下几部分进行组织：
 
 * :ref:`user-docs`
 * :ref:`advanced-docs`

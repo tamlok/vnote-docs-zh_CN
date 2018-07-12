@@ -1,7 +1,5 @@
 # 主题和风格
-
 ## 主题
-
 **主题**用于指定VNote的外观，编辑器的样式和读取模式，以及代码块的语法高亮样式。
 
 主题对应于配置文件夹中的`themes`文件夹中的子文件夹，其结构如下：
@@ -38,6 +36,7 @@ themes/
 │   ├── v_pure.palette
 │   └── v_pure.qss
 ```
+
 -  `v_pure.palette`：主题的主要条目，指定其他文件和样式；
 -  `v_pure.qss`：[Qt样式表](http://doc.qt.io/qt-5/stylesheet-reference.html)的文件，它指定所有小部件的外观；
 -  `v_pure.mdhl`：Markdown 编辑器风格的文件，使用[PEG Markdown的语法突出显示样式表](http://hasseg.org/peg-markdown-highlight/docs/stylesheet_syntax.html);
@@ -45,11 +44,9 @@ themes/
 -  `v_pure_codeblock.css`：使用Highlight.js[在读取模式下突出显示代码块样式的文件](https://highlightjs.org/static/demo/);
 
 ### 主题调色板
-
 我们来看看`.palette`文件。该文件采用 `INI` 格式。
 
 #### [metadata]
-
 此部分指定该主题将使用的其他样式文件。
 
 ```ini
@@ -63,9 +60,9 @@ css_file=v_pure.css
 codeblock_css_file=v_pure_codeblock.css
 version=2
 ```
-#### [phony]
 
-此部分用于定义基本抽象颜色属性的**变量**。变量可以通过@变量名引用并定义另一个变量。
+#### [phony]
+此部分用于定义基本抽象颜色属性的**变量**。变量可以通过`@变量名`引用并定义另一个变量。
 
 这些变量由其他部分引用，因此您可以自由选择和定义自己的变量。
 
@@ -132,8 +129,8 @@ danger_focus_bg=#D9534F
 danger_hover_bg=#D9534F
 danger_pressed_bg=#AC2925
 ```
-#### [soft_defined]
 
+#### [soft_defined]
 本节定义Vnote代码所使用的变量。你**必须**定义这些变量才能使VNote看起来正确。
 
 ```ini
@@ -173,8 +170,8 @@ template_title_flash_dark_fg=@master_bg
 search_hit_item_fg=@selected_fg
 search_hit_item_bg=@master_light_bg
 ```
-#### [widgets]
 
+#### [widgets]
 本节定义了要在`qss`文件中使用的变量，以定义不同小部件的具体样式。它们被qss文件引用。
 
 ```ini
@@ -203,7 +200,9 @@ menu_separator_bg=@separator_bg
 menu_icon_fg=@icon_fg
 menu_icon_danger_fg=@danger_icon_fg
 ```
+
 如果你好奇，`qss` 文件可能看起来像这样：
+
 ```css
 /* QWidget */
 QWidget
@@ -246,20 +245,17 @@ QMenuBar::item:selected {
 ```
 
 ### 自定义主题
-
 VNote支持自定义主题。只需将theme（文件夹）放在`themes`文件夹中，重新启动VNote并在菜单中的`File`中选择你的theme即可。
 
 自定义主题的最佳方法是调整默认主题。VNote将在`themes` 文件夹中输出默认主题（如果没有，您可以在[此处](https://github.com/tamlok/vnote/tree/master/src/resources/themes)下载）。复制默认主题并重命名 `palette` 文件。然后你可以根据自己的喜好调整它。需要重新启动VNote才能使更改生效。
 
 ## 编辑风格
-
 编辑器样式由`mdhl`文件指定。每个主题可能带有一个`mdhl`文件。您还可以应用另一个`mdhl`文件，而不是使用主题指定的默认文件。单独的样式文件可以放在配置文件夹的`styles` 文件夹中。为了扫描新的`mdhl`文件需要重新启动VNote，并且需要重新打开笔记以应用新样式。
 
 ![](_v_images/_1517715930_350213329.png)
 
- ### MDHL文件的语法
-
- `mdhl` 文件采用[PEG Markdown的语法高亮样式表](http://hasseg.org/peg-markdown-highlight/docs/stylesheet_syntax.html)并扩展它以支持更多元素。
+### MDHL文件的语法
+`mdhl` 文件采用[PEG Markdown的语法高亮样式表](http://hasseg.org/peg-markdown-highlight/docs/stylesheet_syntax.html)并扩展它以支持更多元素。
 
 ```
 # This is the default markdown styles used for Peg-Markdown-Highlight
@@ -370,16 +366,13 @@ For example, if you want to change the font size of the code block in edit mode,
 ```
 font-size: -2
 ```
-## 渲染样式
 
+## 渲染样式
 读取模式下的呈现样式由`css`文件指定。每个主题都可以带有一个`css`文件。您还可以应用另一个`css`文件，而不是使用主题指定的默认文件。单独的样式文件可以放在配置文件夹的 `styles`文件夹中。为了扫描新的css文件需要重新启动`css`，并且需要重新打开笔记以应用新样式。
 
 ![](_v_images/_1517717905_885171283.png)
 
- 
-
 ## 代码块渲染样式
-
 读取模式下的呈现样式由`css` 文件指定。每个主题都可以带有一个`css` 文件。您还可以应用另一个`css` 文件，而不是使用主题指定的默认文件。单独的样式文件可以放在配置文件夹的`styles/codeblock_styles` 文件夹中。为了扫描新的`css` 文件需要重新启动VNote，并且需要重新打开注释笔记以应用新样式。
 
 该文件由 **highlight.js** 渲染器引擎使用。您可以从[Highlight.js Github](https://github.com/isagalaev/highlight.js/tree/master/src/styles)下载现有的样式文件。
