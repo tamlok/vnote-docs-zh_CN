@@ -1,27 +1,31 @@
-# Build VNote
-You need **Qt 5.9** to build VNote from source.
+# 建立VNote
 
-## Get the Source Code of VNote
-VNote's source code is available on [Github](https://github.com/tamlok/vnote). You could download the ZIP archive of the code. Please be aware of that VNote depends on some submodules, so you should also download the source codes of these modules.
+您需要**Qt 5.9**才能从源代码创建VNote。
 
-The recommended way is using **git** like this:
+## 获取VNote的源代码
+
+VNote的源代码可在 [Github](https://github.com/tamlok/vnote) 上获取。您可以下载代码的ZIP存档。请注意，VNote依赖于某些子模块，因此您还应该下载这些模块的源代码。
+
+推荐的方法是像以下方式使用**git**：
 
 ```
 git clone https://github.com/tamlok/vnote.git vnote.git
 cd vnote.git
 git submodule update --init
 ```
+## 获取Qt 5.9
 
-## Get Qt 5.9
-You could get the standalone Qt SDK from [Qt Downloads](http://info.qt.io/download-qt-for-application-development). For users in China, you could speed up the download via the [TUNA Mirrors](https://mirrors4.tuna.tsinghua.edu.cn/qt/official_releases/qt/5.9/).
+您可以从 [Qt Downloads](http://info.qt.io/download-qt-for-application-development) 获取完整的 Qt SDK。对于中国用户，您可以通过[TUNA 镜像](https://mirrors4.tuna.tsinghua.edu.cn/qt/official_releases/qt/5.9/) 加快下载速度。
 
-## Windows
-On Windows, you need **Visual Studio 2015** or above to compile VNote.
+## 视窗
 
-Open **Qt Creator** and open `vnote.git\VNote.pro` as project. Now you are ready to tune and compile VNote!
+在 Windows 上，您需要 **Visual Studio 2015** 或更高版本来编译 VNote。
+
+打开 **Qt Creator** 并打开`vnote.git\VNote.pro`作为项目。现在您已准备好调整和编译VNote！
 
 ## Linux
-In Ubuntu, you could get Qt 5.9 from PPA like this:
+
+在Ubuntu中，你可以像这样从PPA获得 Qt 5.9：
 
 ```sh
 sudo add-apt-repository ppa:beineri/opt-qt591-trusty -y
@@ -30,8 +34,7 @@ sudo apt-get -y install qt59base qt59webengine
 sudo apt-get -y install qt59webchannel qt59svg qt59location qt59tools qt59translations
 source /opt/qt*/bin/qt*-env.sh
 ```
-
-Then compile and install VNote like this:
+然后像这样编译和安装VNote：
 
 ```sh
 cd vnote.git
@@ -41,56 +44,54 @@ qmake ../VNote.pro
 make
 sudo make install
 ```
-
 ### Fcitx
-If you use **Fcitx** as the input method, you need to copy the missing library `libfcitxplatforminputcontextplugin.so` to Qt's plugin directory.
 
-To find the place of `libfcitxplatforminputcontextplugin.so`, you could execute:
+如果您使用 **Fcitx** 作为输入方式，则需要将缺少的库 `libfcitxplatforminputcontextplugin.so` 复制到 Qt 的插件目录。
+
+要找到 `libfcitxplatforminputcontextplugin.so` 的位置，您可以执行：
 
 ```sh
 fcitx-diagnose | grep libfcitxplatforminputcontextplugin.so
 ```
+如果没有这样的库，您可能需要在继续之前为 Qt5 正确安装和配置 Fcitx。
 
-If there is no such lib, you may need to install and configure Fcitx for Qt5 correctly before continue.
-
-Then you need to copy the lib to Qt's plugin directory:
+然后你需要将lib复制到Qt的插件目录：
 
 ```
 <path_to_Qt_installation_directory>/5.9.3/gcc_64/plugins/platforminputcontexts/
 ```
-
 ### OpenSSL
-VNote needs **openSSL 1.0** for networking. To verify if it has been setup correctly, you could check for updates in the *Help* menu of VNote. If VNote fails to check for updates, then you need to copy libraries of openSSL to Qt's library directory.
 
-After the installation of openSSL, you could find two lib files:
+VNote需要 **openSSL 1.0** 以实现联网。要验证它是否已正确设置，您可以在VNote的帮助菜单中检查更新。如果VNote无法检查更新，则需要将openSSL的库复制到Qt的库目录中。
+
+安装openSSL后，您可以找到两个lib文件：
 
 ```
 /usr/lib/libcrypto.so.1.0.0
 /usr/lib/libssl.so.1.0.0
 ```
-
-Copy these two files to Qt's library directory:
+将这两个文件复制到Qt的库目录中：
 
 ```
 <path_to_Qt_installation_directory>/5.9.3/gcc_64/lib/
 ```
-
-In Qt's library directory, create symlinks for these two files:
+在Qt的库目录中，为这两个文件创建符号链接：
 
 ```sh
 ln -s libcrypto.so.1.0.0 libcrypto.so
 ln -s libssl.so.1.0.0 libssl.so
 ```
-
 ## MacOS
-If you prefer command line on macOS, you could follow these steps.
 
-1. Install Xcode and Homebrew;
-2. Install Qt 5.9.1 via Homebrew:
+如果您更喜欢macOS上的命令行，则可以按照以下步骤操作。
+
+1. 安装Xcode和Homebrew;
+
+2. 通过Homebrew安装Qt 5.9.1：
     ```
     brew install qt@5.9.1
     ```
-3. In the project directory, create `build_macos.sh` like this:
+3. 在项目目录中，像下面那样创建`build_macos.sh`：
     ```sh
     QTDIR="/usr/local/opt/qt@5.9.1"
     PATH="$QTDIR/bin:$PATH"
@@ -103,9 +104,10 @@ If you prefer command line on macOS, you could follow these steps.
     qmake CONFIG-=debug CONFIG+=release ../VNote.pro
     make -j2
     ```
-4. Make `build_macos.sh` executable and run it:
+
+4. 使 `build_macos.sh` 可执行并运行它：
     ```sh
     chmod +x build_macos.sh
     ./build_macos.sh
     ```
-5. Now you got the bundle `path/to/project/build/src/VNote.app`.
+5. 现在你得到了bundle路径 `path/to/project/build/src/VNote.app` 。

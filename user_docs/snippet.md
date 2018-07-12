@@ -1,60 +1,74 @@
-# Snippet
-Snippet is designed to facilitate the repeated input of some words.
+# 片段
 
-## Snippet Management
-You could manage snippets via the `Tools` dock widget.
+片段旨在方便重复输入一些词组。
+
+## 片段管理
+
+您可以通过 `Tools` 工具栏小部件管理片段。
 
 ![](_v_images/_1517130666_1123329589.png)
 
-In this panel, we could:
+ 
 
-1. Create a snippet;
-2. Open snippet folder;  
-VNote uses a folder in the configuration folder to store all the snippets and use configuration file `snippet.json` for management. Each snippet corresponds to one file.
-3. View and edit the information about a snippet;
-4. Sort and delete snippets;
-5. Apply (insert) a snippet into the editor;
+在此面板中，我们可以：
 
-## Define A Snippet
-A snippet contains:
+1. 创建一个片段；
+2. 打开片段文件夹；
 
-- Snippet Name
-    - Identifies a snippet. It is also the name of the corresponding file in the snippet folder.
-- Snippet Type
-    - Plain text or HTML. Currently only plain text is supported.
-- Shortcut
-    - You could designate one of the 26 characters (`a` to `z`) to insert snippet quickly.
-- Cursor Mark
-    - VNote uses Cursor Mark to mark the position of the cursor after applying a snippet. Should appears only once in the `Content`.
-- Selection Mark
-    - VNote uses Selection Mark to mark the position to insert the selected text before applying a snippet. Selection mark could appear multiple times in the `Content`. After applying a snippet, all the selection marks will be replaced with the selected text.
-- Content
-    - The content of the snippet which will be inserted at the position of current cursor while applying a snippet.
+VNote使用配置文件夹中的一个文件夹来存储所有片段，并使用配置文件 `snippet.json` 进行管理。每个片段对应一个文件。
 
-## Apply A Snippet
-### Snippet Panel
-Place the cursor at the proper position and double click a snippet in the snippet panel to apply a snippet.
+3. 查看和编辑有关片段的信息；
 
-### Shortcuts
-You could use **Captain Mode** to apply a snippet quickly. In edit mode, press `Ctrl+E S` to activate snippet selection dialog, which shows all the snippets **with shortcut defined**. Press the corresponding shortcut key to apply a snippet.
+4.          排序和删除片段；
+5.          将一个片段应用（插入）到编辑器中；
 
-## Examples
-### Insert Code Block with CPP
-    ```cpp
-    @@
-    ```
+## 定义一个片段
 
-### Comment Out Selected Text
+片段包含：
+
+- 片段名称
+  - 用以标识不同的片段。它也是片段文件夹中相应文件的名称。
+
+- 片段类型
+  - 纯文本或HTML。目前仅支持纯文本。
+
+- 快捷键
+  - 您可以指定26个字符（a到z）中的一个来快速插入指定的片段。
+- 光标标记
+  - 插入片段后，VNote使用光标标记以表示光标的位置。应该只在内容中出现一次。
+- 选择标记
+  - 在应用片段之前，VNote使用选择标记以标记插入所选文本的位置。选择标记可能会在内容中多次出现。插入片段后，所有选择标记都将替换为所选片段。
+- 内容
+  - 在插入片段时，片段的内容将插入当前光标位置。
+
+## 使用一个片段
+
+### 片段面板
+
+将光标放在正确的位置，然后双击代码段面板中的片段段以插入片段。
+
+### 快捷键
+
+您可以使用**Captain Mode**快速插入片段。在编辑模式下，按`Ctrl+E S` 以激活片段选择对话框，其中显示**已定义快捷方式**的所有片段。按相应的快捷键以插入片段。
+
+## 例子
+
+### 插入CPP语言的代码块
+
+```cpp
+@@
+```
+### 注释掉所选文本
+
 ```
 <!-- $$@@ -->
 ```
+### 颜色的标记
 
-### Tag for Color
 ```
 <font color=red>$$@@</font>
 ```
-
-Or:
+或：
 
 ```
 <mark>$$@@</mark>

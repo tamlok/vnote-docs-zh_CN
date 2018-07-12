@@ -1,57 +1,64 @@
-# Frequently Asked Questions
-## How to specify customized MathJax script?
-VNote supports a configuration `[web]/mathjax_javascript` which specifies the location of the MathJax and its configuration to use. The default value may look like this:
+# 常见问题
+
+## 如何指定自定义的MathJax脚本？
+
+VNote支持配置`[web]/mathjax_javascript` ，它指定MathJax的位置及其使用的配置。默认值可能如下所示：
 
 ```ini
 [web]
 ; Location and configuration for Mathjax
 mathjax_javascript=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML
 ```
+您可以下载MathJax ([howto](http://docs.mathjax.org/en/latest/installation.html)) 并指定要使用的MathJax的本地副本，例如`mathjax_javascript="/home/tamlok/Downloads/MathJax-2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"`。
 
-You could download the MathJax ([howto](http://docs.mathjax.org/en/latest/installation.html)) and specify a local copy of the MathJax to use, like `mathjax_javascript="/home/tamlok/Downloads/MathJax-2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"`.
-
-You could also specify customized script in GUI settings dialog:
+您还可以在GUI设置对话框中指定自定义脚本：
 
 ![Customize MathJax Script](_v_images/_customizem_1526304904_1519292127.png)
 
-## How to make VNote more "portable"?
-VNote will read and store configuration files in the common directory of the operating system to store application data. If you prefer to put these configuration files along with the VNote executable, you coulud copy or create the `vnote.ini` file in the directory containing VNote executable. VNote will first try to read `vnote.ini` from where the executable exists.
+ 
 
-However, please notice that VNote will store the notebook's path in the configuration file, so it may read a wrong path and complain about errors if you copy VNote to another computer.
+## 如何让VNote更「便携」？
 
-## How to draw diagrams using Mermaid or Flowchart.js?
-1. Enable `Mermaid Diagram` and `Flowchart.js` in the `Markdown` menu;
-2. Re-open opened tabs to let it take effect;
-3. For Mermaid, write a fenced code block specified with language `mermaid`;
-4. For Flowchart.js, write a fenced code block specified with language `flowchart` or `flow`;
+VNote将读取并存储配置文件到操作系统的公共目录中以存储应用程序数据。如果您希望将这些配置文件与VNote可执行文件一起放置，则可以在包含VNote可执行文件的目录中复制或创建`vnote.ini`文件。VNote将首先尝试从可执行文件所在的位置读取`vnote.ini`。
 
-Mermaid example:
+但请注意，VNote会将笔记本的路径存储在配置文件中，因此如果将VNote复制到另一台计算机，它可能会读取错误的路径并报错。
 
-    ```mermaid
-    graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-    ```
+## 如何使用Mermaid或Flowchart.js绘制图表？
 
-Flowchart.js example:
+1. 在`Markdown`菜单中启用`Mermaid Diagram`和`Flowchart.js`；
+2. 重新打开已打开的标签让它生效；
 
-    ```flowchart
-    st=>start: Start:>http://www.google.com[blank]
-    e=>end:>http://www.google.com
-    op1=>operation: My Operation
-    sub1=>subroutine: My Subroutine
-    cond=>condition: Yes
-    or No?:>http://www.google.com
-    io=>inputoutput: catch something...
+3. 对于Mermaid，用`mermaid`语言编写一个码块；
+4. 对于Flowchart.js，用`flowchart` 或`flow`语言编写代码块；
 
-    st->op1->cond
-    cond(yes)->io->e
-    cond(no)->sub1(right)->op1
-    ```
+Mermaid的例子：
 
-## How to open a note in another tab?
+```mermaid
+graph TD;
+A-->B;
+A-->C;
+B-->D;
+C-->D;
+```
+Flowchart.js例子：
+
+```flowchart
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+```
+## 如何在另一个标签中打开笔记？
+
 ![](_v_images/_1526306088_1492754452.png)
 
-When `Single click to open a note in current tab` is enabled, single-click in the note list to open the note in current tab, while double-click to open it in a new tab.
+ 
+
+当`单击在当前标签中打开该笔记`是可用的，在笔记列表中单击一个笔记本可以在当前的标签中打开，而双击笔记列表的笔记则在新标签中打开它。

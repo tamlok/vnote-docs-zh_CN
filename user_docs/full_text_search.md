@@ -1,43 +1,57 @@
-# Full-Text Search
-VNote provides powerful built-in full-text search to search your notes.
+# 全文搜索
 
-`Ctrl+E C` or `Ctrl+Alt F` to activate the **Search** dock widget. You could also activate it through the `Edit` or `View` menu.
+VNote提供强大的内置的全文搜索功能，以搜索您的笔记。
+
+按`Ctrl+E C` 或`Ctrl+Alt F` 激活**搜索**坞小部件。您也可以通过`编辑`或`查看`菜单激活它。
 
 ![](_v_images/_1527406007_1635981025.png)
 
-## Keywords
-- Specify the keywords to search for;
-- Support `&&` and `||` for AND and OR logics, such as `markdown && vnote`;
-- Space-separated keywords mean AND, such as `markdown vnote`;
+ 
+
+## 关键词
+
+- 指定要搜索的关键字；
+
+- 支持`&&`和`||` 用于AND和OR逻辑，例如`markdown && vnote`；
+- 以空格分隔的关键字表示AND，例如 `markdown vnote`；
 
 ### Magic Switch
-VNote supports **Magic Switch** in the keywords to turn on/off some options of the search:
 
-- `\f` or `\F`: disable or enable **Fuzzy Search**;
-- `\c` or `\C`: case insensitive or sensitive;
-- `\r` or `\R`: disable or enable **Regular Expression**;
-- `\w` or `\W`: disable or enable **Whole Word Only**;
+VNote支持关键字中的**Magic Switch**来打开/关闭搜索的某些选项：
 
-Example: `vnote \C \W` to search `vnote` with case-insensitive and whole-word-only.
+- `\f`或`\F`：禁用或启用**模糊搜索**；
 
-## Scope
-There are four scopes to constrain the search:
+- `\c`或`\C`：不区分大小写或敏感；
+- `\r`或`\R`：禁用或启用**正则表达式**；
+- `\w`或`\W`：禁用或启用**仅限全字**；
 
-- `Opened Notes`;
-- `Current Folder`;
-- `Current Notebook`;
-- `All Notebooks`;
+例子：`vnote \C \W`用于`不区分大小写`并且`仅限全字`搜索vnote。
 
-## Object
-Specify whether the search should be executed against the **Content** or the **Name**.
+## 范围
 
-## Target
-We could search among:
+限制搜索有四个范围：
 
-- `Note`;
-- `Folder`;
-- `Notebook`;
-- `Note/Folder/Notebook`;
+-  `已打开笔记`；
 
-## File Pattern
-We could specify the file pattern to filter the files we are interested in, such as `*.md` to search only Markdown files.
+- `当前文件夹`；
+
+- `当前笔记本`；
+- `所有笔记本`；
+
+## 对象
+
+指定是否应对**内容**或**名称**执行搜索。
+
+## 目标
+
+我们可以搜索：
+
+- `笔记`；
+- `文件夹`；
+- `笔记本`；
+
+- `笔记/文件夹/笔记本`；
+
+## 文件模式
+
+我们可以指定文件模式来过滤以获得我们感兴趣的文件，例如`*.md`以仅搜索Markdown文件。

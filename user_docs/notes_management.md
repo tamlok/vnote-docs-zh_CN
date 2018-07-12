@@ -1,32 +1,39 @@
-# Notes Management
-VNote adopts **notebooks-folders-notes** hierarchy for notes management. A notebook corresponds to a directory in the file system, which is called **Notebook Root Folder**. Folders of a notebook correspond to directories within the Notebook Root Folder. Notes inside a folder corresponds to files within that directory.
+# 笔记管理
 
-## Notebook
-Notebook is an independent, self-explanatory container in VNote. A notebook is a **Notebook Root Folder** in the file system. The root folder contains all the notes and configuration files of that notebook.
+VNote采用**notebooks-folders-notes**层次结构进行笔记管理。notebook对应于文件系统中的目录，称为**Notebook Root Folder**。笔记本的Folders对应于Notebook Root Folder中的目录。文件夹中的Notes对应于该目录中的文件。
 
-### Create A Notebook
-You could create a new notebook by specifying following fields:
+## 笔记本
 
-- **Notebook Name**
-    - Name of your notebook in VNote. It is only used to identify your notebook in VNote. It will not be written into the configuration of the notebook.
-- **Notebook Root Folder**
-    - Choose an **EMPTY** directory in your system to hold all the contents of this notebook. This choosen directory is assumed to be in the control of VNote.
-- **Image Folder**
-    - This is the name of the folder used to store local images of notes. VNote uses a given folder which has the same parent folder of the notes to store images of those notes.
-- **Attachment Folder**
-    - This is the name of the folder used to store attachment files of notes.
+Notebook是在VNote中独立，不言自明的容器。一个笔记本是文件系统中的一个**Notebook Root Folder**。该根文件夹包含该笔记本的所有笔记和配置文件。
 
-### Migrate and Import A Notebook
-A notebook is an independent directory in the file system, so you could just copy or synchronize the *Notebook Root Folder* to migrate a notebook.
+### 创建一个笔记本
 
-You could import an existing notebook into VNote by selecting its *Notebook Root Folder* when creating a notebook. VNote will try to read the configuration files to restore the notebook.
+您可以通过指定以下字段来创建新笔记本：
 
-Combining these, you could create your notebooks in a directory which is synchronized via third-party service, such as Dropbox and OneDrive, and then in another computer, you could import that directory into VNote as a notebook. With this, you could use VNote to edit and manage your notes, which will be synchronized by other trusted services, both at home and at work.
+- **笔记本名称**
+  - VNote中笔记本的名称。它仅用于在VNote中识别您的笔记本。它不会写入笔记本的配置。
 
-## Folders
-The hierarchy of folders within a notebook is the same as that of the directories within the *Notebook Root Folder*. You could create as many as possible levels of folders theoritically.
+- **笔记本根文件夹**
+  - 在系统中选择一个**空**目录以保存此笔记本的所有内容。该被选的目录会假设在VNote的控制之下。
+- **图像文件夹**
+  - 这是用于存储笔记的本地图像的文件夹的名称。VNote使用给定文件夹（具有相同父文件夹）来存储这些笔记的图像。
+- **附件文件夹**
+  - 这是用于存储备注附件文件的文件夹的名称。
 
-## Notes
-You could import external files into VNote as notes by the `New Notes From Files` action in `File` menu. VNote will **copy** selected files into current folder as notes.
+### 迁移和导入笔记本
 
-In theory,  a note in VNote could use any suffix. Notes with suffix `.md` will be treated as Markdown files.
+一个笔记本是文件系统中的一个独立目录，因此您只需复制或同步*Notebook Root Folder*即可迁移笔记本。
+
+您可以在创建笔记本时通过选择它的*Notebook Root Folder*将现有笔记本导入到VNote。VNote将尝试读取配置文件以还原笔记本。
+
+结合这些操作，您可以在允许第三方服务（如Dropbox和OneDrive）同步的目录中创建笔记本，然后在另一台计算机中，您可以将该目录作为笔记本导入VNote。这样，您可以使用VNote编辑和管理您的笔记，这些笔记将由其他受信任的服务在家中和工作中同步。
+
+## 文件夹
+
+笔记本中的文件夹层次结构与*Notebook Root Folder*中的目录相同。理论上您可以创建无限多的文件夹层级。
+
+## 笔记
+
+您可以通过菜单中的`File` 选项里的`New Notes From Files` 操作将外部文件作为笔记导入到VNote中。VNote将所选文件作为笔记复制到当前文件夹中。
+
+理论上，VNote中的笔记可以使用任何后缀。带后缀`.md`的笔记将被视为Markdown文件。

@@ -1,18 +1,25 @@
-# Why VNote
-## What is VNote
-VNote is a **V**im-inspired **Note**-taking application, designed specially for **Markdown**. It is not yet just another Markdown editor. VNote is designed to be a powerful Markdown editor with sweet note management, or a note-taking application with pleasant Markdown experience.
+# 为什么称为VNote
 
-VNote is free, and open source. You could get VNote for Linux, Windows, and macOS.
+## 什么是VNote
 
-## Why Another Markdown Wheel
-### Insights About Markdown
-Markdown, as a simple mark language, unlike rich text, was born with a **gap between edit and read**. There are about three ways to handle this gap:
+VNote是一款专为**Markdown**设计的**V**im风格**笔记**应用程序。它不仅仅是一个Markdown编辑器。VNote旨在成为一个功能强大的Markdown编辑器，带有便捷的笔记管理功能，同时具有友好的Markdown体验的笔记记录应用程序。
 
-1. As one extreme, some editors just treat Markdown as **plain text**. Users may lose themselves in the messy black characters. It is **hard to keep track** of the information of the note.
-2. Most Markdown editors use two side-by-side panels to **edit and preview Markdown notes simultaneously**. It makes things easier since users could see a pleasant typesetting and layout while editing the text. However, two panels may occupy the whole screen and users keep moving eyes left and right, which will be a big distraction.
-3. As another extreme, some editors convert the Markdown elements in place immediately after the typing, which makes editing Markdown just like editing rich text document in Word with some shortcuts. This may conflict with what Markdown is intended to be.
+VNote是免费、开源的。您可以获得适用于Linux，Windows和macOS的VNote。
 
-Since most editors choose the second way to handle the gap, people always think of preview when it comes to Markdown. It may be a **MISUNDERSTANDING** about Markdown. Designed as a simple mark language, Markdown is intended to help to keep track of the information of the text when editing and provide a beautiful typesetting when reading after being converted to HTML.
+## 为什么要造另一个Markdown「轮子」
 
-### Tradeoff: VNote's Way
-VNote tries to minimize the gap and provide the best-effort WYSIWYG for Markdown via **tuned syntax highlights and some other features**. By helping to keep track of the content, there is no need to preview or alter the text immediately after being typed.
+### 关于Markdown的见解
+
+Markdown作为一种简单的标记语言，与富文本不同，它诞生是为了**弥补编辑器和阅读器之间存在的差距**。解决这种差距的方法有三种：
+
+1.          作为一个极端，一些编辑器只是将Markdown视为**纯文本**。用户可能会迷失在凌乱的黑色字符中。记录追踪笔记的信息是**十分困难**。
+
+2.          大多数Markdown编辑器使用两个并排面板以**同时编辑和预览**Markdown笔记。它使事情变得更加简单，因为用户可以在编辑文本的同时预览的排版和布局结果。但是，两个面板可能占据整个屏幕，并且用户要不断左右移动视线，这使用户极其容易分心。
+
+3.          另一个极端是，一些编辑器在用户输入后马上转换Markdown元素，使得在使用Markdown时就像使用一些快捷方式在Word里编辑富文本文档一样。这可能与Markdown的目标相冲突。
+
+由于大多数编辑器选择第二种方式来消除差距，人们总是会在使用Markdown时需要预览结果。这可能是一个关于Markdown的**误解**。定位为简单的标记语言，Markdown旨在帮助在编辑时跟踪文本信息，并在转换为HTML后进行阅读时提供漂亮的排版。设计
+
+### VNote的权衡方式
+
+VNote尝试通过**调整语法高亮和其他一些功能**来最小化差距并为Markdown提供最佳的所见即所得效果。通过跟踪内容的协助，无需在输入后立即预览或转换文本。
