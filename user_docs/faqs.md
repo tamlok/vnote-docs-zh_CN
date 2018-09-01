@@ -8,11 +8,16 @@ VNote支持配置`[web]/mathjax_javascript` ，它指定MathJax的位置及其�
 mathjax_javascript=https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML
 ```
 
-您可以下载MathJax ([howto](http://docs.mathjax.org/en/latest/installation.html)) 并指定要使用的MathJax的本地副本，例如`mathjax_javascript="/home/tamlok/Downloads/MathJax-2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"`。
+您可以下载MathJax ([howto](http://docs.mathjax.org/en/latest/installation.html)) 并指定要使用的MathJax的本地副本，例如`mathjax_javascript="file:///home/tamlok/Downloads/MathJax-2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"`。
 
 您还可以在GUI设置对话框中指定自定义脚本：
 
 ![Customize MathJax Script](_v_images/_customizem_1526304904_1519292127.png)
+
+注意：
+
+- 请在本地路径前加上`file://`；
+- 使用本地路径可能会无法找到字体。一个比较好的方法是在本机上运行一个轻量级的HTTP服务器。
 
 ## 如何让VNote更「便携」？
 VNote将读取并存储配置文件到操作系统的公共目录中以存储应用程序数据。如果您希望将这些配置文件与VNote可执行文件一起放置，则可以在包含VNote可执行文件的目录中复制或创建`vnote.ini`文件。VNote将首先尝试从可执行文件所在的位置读取`vnote.ini`。
